@@ -3,5 +3,9 @@ class Photo {
   final String photographer;
   final String imageUrl;
 
-  Photo({required this.id, required this.photographer, required this.imageUrl});
+  const Photo({
+    required this.id,
+    required this.photographer,
+    required this.imageUrl,
+  });
 }
