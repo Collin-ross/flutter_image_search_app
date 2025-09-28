@@ -44,3 +44,6 @@ flutter:
 **Run**
 Web (Chrome recommended):
 flutter run -d chrome
+(MacOS):
+flutter run -d macos
+
