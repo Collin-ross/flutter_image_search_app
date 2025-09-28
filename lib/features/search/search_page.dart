@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'search_controller.dart';
 import 'pexels_repository.dart';
 
-/// Single-page UI: debounced search + results grid with infinite scroll.
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
   @override
@@ -18,7 +17,6 @@ class _SearchPageState extends State<SearchPage> {
   void initState() {
     super.initState();
     controller = ImageSearchController(PexelsRepository());
-    // Trigger load when you’re near the bottom.
     scrollCtrl.addListener(() {
       const threshold = 400.0;
       if (scrollCtrl.position.pixels >
@@ -28,11 +26,6 @@ class _SearchPageState extends State<SearchPage> {
         controller.loadMore(_refresh);
       }
     });
-
-    // Start with a friendly default so you immediately see results.
-    textCtrl.text = 'nature';
-    // Bypass debounce for first load.
-    controller.searchImmediate(textCtrl.text, _refresh);
   }
 
   @override
@@ -104,7 +97,7 @@ class _SearchPageState extends State<SearchPage> {
                   sliver: SliverGrid.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
+                      crossAxisCount: 4,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                     ),
