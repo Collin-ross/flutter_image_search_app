@@ -1,16 +1,46 @@
-# flutter_image_search_app
+**Flutter Image Search App**
+A single-page image search app built with Flutter.
+Type a query, see results below, and keep scrolling for more.
 
-A new Flutter project.
+**Features**
 
-## Getting Started
+Search bar at the top
 
-This project is a starting point for a Flutter application.
+Results grid below
 
-A few resources to get you started if this is your first Flutter project:
+Debounced typing (reduces API calls)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Infinite scroll / pagination
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Uses the Pexels API (can be swapped out)
+
+**Getting Started**
+Requirements:
+
+Flutter
+
+A Pexels API key: https://www.pexels.com/api/
+
+**Clone & Install**
+git clone https://github.com/Collin-ross/flutter_image_search_app.git
+cd flutter_image_search_app
+flutter pub get
+
+**Configure Environment**
+Create a file named .env in the project root:
+
+PEXELS_API_KEY=YOUR_REAL_KEY_HERE
+
+
+In pubspec.yaml, make sure .env is listed as an asset (and that uses-material-design appears only once):
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+
+
+
+**Run**
+Web (Chrome recommended):
+flutter run -d chrome
